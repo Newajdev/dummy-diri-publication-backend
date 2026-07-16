@@ -1,0 +1,10 @@
+import { Router } from "express";
+import { ArticleController } from "../controllers/article.controller.js";
+import { asyncHandler } from "../utils/async-handler.js";
+import { uploadArticleFiles } from "../middlewares/upload.middleware.js";
+const router = Router(); const controller = new ArticleController();
+router.post("/", uploadArticleFiles, asyncHandler(controller.create.bind(controller)));
+router.get("/", asyncHandler(controller.list.bind(controller)));
+router.get("/:slug", asyncHandler(controller.getBySlug.bind(controller)));
+router.delete("/:id", asyncHandler(controller.remove.bind(controller)));
+export default router;
