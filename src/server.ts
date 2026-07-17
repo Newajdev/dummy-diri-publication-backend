@@ -1,14 +1,7 @@
-import express from "express";
-import dotenv from "dotenv";
-import { env } from "./config/env";
+import "dotenv/config";
+import { app } from "./app.js";
+import { env } from "./config/env.js";
 
-dotenv.config();
-
-const app = express();
-
-const port = env.PORT;
-app.use(express.json());
-
-app.listen(port, () => {
-  console.log(`API listening on port ${port}`);
+app.listen(env.PORT, () => {
+  console.log(`API listening on port ${env.PORT}`);
 });
