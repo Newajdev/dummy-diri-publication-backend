@@ -1,5 +1,6 @@
 import bnBijoy2Unicode from "@codesigntheory/bnbijoy2unicode";
 
+
 const unicodeBangla = /[\u0980-\u09FF]/;
 // Characteristic glyphs produced when SutonnyMJ/Bijoy ANSI text is extracted from a PDF.
 const bijoyMarkers = /[†‡ˆ‰Š‹›œ]/;
