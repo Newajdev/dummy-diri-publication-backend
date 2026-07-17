@@ -1,13 +1,13 @@
 import { mkdir } from "node:fs/promises";
 import path from "node:path";
 import QRCode from "qrcode";
-import { Article } from "../generated/prisma/client.js";
 import { env } from "../config/env.js";
 import { prisma } from "../lib/prisma.js";
 import { AppError } from "../utils/app-error.js";
 import { deleteFile, publicFileUrl, uploadsRoot } from "../utils/files.js";
 import { uniqueSlug } from "../utils/slug.js";
 import { extractPdfText } from "../utils/pdf-text.js";
+import { Article } from "@prisma/client";
 
 export class ArticleService {
   async create(
