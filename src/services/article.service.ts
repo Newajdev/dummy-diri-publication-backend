@@ -32,7 +32,7 @@ export class ArticleService {
       await mkdir(path.join(uploadsRoot, "qr"), { recursive: true });
       await QRCode.toFile(
         path.join(uploadsRoot, "qr", filename),
-        `${env.frontendUrl}/article/${slug}`,
+        `${env.FRONTEND_URL}/article/${slug}`,
         { width: 600, margin: 2, color: { dark: "#171717", light: "#ffffff" } },
       );
       return await prisma.article.update({

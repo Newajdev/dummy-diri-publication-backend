@@ -6,7 +6,7 @@ import { errorHandler } from "./middlewares/error.middleware.js";
 import articleRoutes from "./routes/article.routes.js";
 import { uploadsRoot } from "./utils/files.js";
 export const app = express();
-app.use(cors({ origin: env.corsOrigins }));
+app.use(cors({ origin: env.CORS_ORIGINS }));
 app.use(express.json());
 app.use("/uploads", express.static(path.resolve(uploadsRoot)));
 app.use("/api/articles", articleRoutes);

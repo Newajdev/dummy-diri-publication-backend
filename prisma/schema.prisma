@@ -1,9 +1,10 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
 datasource db {
   provider = "postgresql"
-}
-generator client {
-  provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  url      = env("DATABASE_URL")
 }
 
 model Article {
@@ -13,7 +14,7 @@ model Article {
   pdfUrl    String
   audioUrl  String
   qrCodeUrl String
-  content   String   @default("") @db.Text
+  content   String   @db.Text
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
