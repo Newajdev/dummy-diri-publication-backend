@@ -1,7 +1,7 @@
 import { mkdir } from "node:fs/promises";
 import path from "node:path";
 import QRCode from "qrcode";
-import { Article } from "@prisma/client";
+import { Article } from "../generated/prisma/client.js";
 import { env } from "../config/env.js";
 import { prisma } from "../prisma/client.js";
 import { AppError } from "../utils/app-error.js";

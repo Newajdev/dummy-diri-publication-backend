@@ -7,6 +7,7 @@ function value(name: string, fallback?: string): string {
 }
 
 export const env = {
+  databaseUrl: value("DATABASE_URL"),
   port: Number(process.env.PORT ?? 4000),
   frontendUrl: value("FRONTEND_URL", process.env.FRONTEND_URL ?? "http://localhost:3000"),
   backendUrl: value("BACKEND_URL", process.env.BACKEND_URL ?? "http://localhost:4000"),
