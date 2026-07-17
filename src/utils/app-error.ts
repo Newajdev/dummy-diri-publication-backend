@@ -1,3 +1,9 @@
 export class AppError extends Error {
-  constructor(public statusCode: number, message: string, public errors: string[] = []) { super(message); }
+  constructor(
+    public statusCode: number,
+    message: string,
+    public errors: string[] = [],
+  ) {
+    super(message);
+  }
 }

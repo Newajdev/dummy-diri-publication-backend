@@ -14,8 +14,11 @@ export async function extractPdfText(filePath: string): Promise<string> {
   } catch (error: unknown) {
     console.error("PDF text extraction failed:", error);
   } finally {
-    try { await parser?.destroy(); }
-    catch (error: unknown) { console.warn("PDF parser cleanup failed:", error); }
+    try {
+      await parser?.destroy();
+    } catch (error: unknown) {
+      console.warn("PDF parser cleanup failed:", error);
+    }
   }
   return extractTextWithOcr(filePath);
 }
